@@ -1,0 +1,21 @@
+{
+  "name": "elements-vue",
+  "version": "3.0.1",
+  "description": "This is the vue package of the integration layer for @inovex.de/elements",
+  "main": "index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Benjamin Pagelsdorf <bpagelsdorf@inovex.de>",
+  "license": "ISC",
+  "devDependencies": {
+    "vue": "^3.0.11"
+  },
+  "dependencies": {
+    "@inovex.de/elements": "^3.0.1"
+  }
+}

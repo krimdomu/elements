@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 import { JsonDocs } from '@stencil/core/internal';
 import { sass } from '@stencil/sass';
 import { angularOutputTarget } from '@stencil/angular-output-target';
+import { vueOutputTarget } from '@stencil/vue-output-target';
 import { promises as fs } from 'fs';
 import { angularOutputTargetFix } from './angular-target-fix';
 
@@ -103,6 +104,10 @@ export const config: Config = {
     angularOutputTargetFix({
       directivesUtilsFile:
         '../elements-angular/elements/src/directives/angular-component-lib/utils.ts',
+    }),
+    vueOutputTarget({
+      componentCorePackage: '@inovex.de/elements',
+      proxiesFile: '../elements-vue/src/components.ts',
     }),
   ],
   plugins: [

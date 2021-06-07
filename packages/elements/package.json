@@ -42,6 +42,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs --legacy && node scripts/generateWrappedIcons.js",
+    "docs.data": "stencil build --docs-json dist/docs.json",
     "clean": "shx rm -rf dist",
     "dev": "stencil build --docs --watch --legacy",
     "lint": "eslint src",
@@ -92,6 +93,7 @@
   },
   "devDependencies": {
     "@stencil/angular-output-target": "^0.0.5",
+    "@stencil/vue-output-target": "^0.4.3",
     "@stencil/sass": "^1.4.1",
     "@types/classnames": "^2.2.6",
     "@types/jest": "26.0.14",
