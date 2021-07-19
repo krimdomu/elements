@@ -1,4 +1,4 @@
-import { VNode, defineComponent, getCurrentInstance, h, inject, ref, Ref } from '@vue/runtime-core';
+import { VNode, defineComponent, getCurrentInstance, h, inject, ref, Ref } from 'vue';
 
 export interface InputProps extends Object {
   modelValue: string | boolean;

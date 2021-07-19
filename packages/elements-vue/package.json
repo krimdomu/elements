@@ -2,18 +2,32 @@
   "name": "elements-vue",
   "version": "3.0.1",
   "description": "This is the vue package of the integration layer for @inovex.de/elements",
-  "main": "index.js",
-  "module": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Benjamin Pagelsdorf <bpagelsdorf@inovex.de>",
   "keywords": [
     "vue"
   ],
-  "author": "Benjamin Pagelsdorf <bpagelsdorf@inovex.de>",
-  "license": "ISC",
+  "homepage": "https://elements.inovex.de",
+  "bugs": {
+    "url": "https://github.com/inovex/elements/issues"
+  },
+  "license": "",
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "shx rm -rf dist",
+    "compile": "npm run tsc",
+    "tsc": "tsc -p ."
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
-    "vue": "^3.0.11"
+    "vue": "^3.0.10",
+    "@types/resize-observer-browser": "^0.1.5",
+    "typescript": "^4.3.2",
+    "shx": "^0.3.3"
   },
   "dependencies": {
     "@inovex.de/elements": "^3.0.1"

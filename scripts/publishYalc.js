@@ -9,6 +9,7 @@ const questions = [
     choices: [
       { title: 'Angular', value: 'angular', selected: true },
       { title: 'React', value: 'react', selected: true },
+      { title: 'Vue', value: 'vue', selected: true },
     ],
   },
   {
@@ -43,6 +44,13 @@ function publishAngular() {
   shell.exec('yalc publish --no-sig --push ./packages/elements-angular/dist/');
 }
 
+function publishVue() {
+  shell.exec(
+    'lerna exec --scope=@inovex.de/elements-vue -- yalc publish --no-sig --push'
+  );
+}
+
+
 async function main() {
   const { targets, skipInstall } = await prompts(questions);
 
@@ -76,6 +84,9 @@ async function main() {
   }
   if (targets.includes('react')) {
     publishReact();
+  }
+  if (targets.includes('vue')) {
+    publishVue();
   }
 
   // Clean up
