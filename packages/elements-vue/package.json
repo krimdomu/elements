@@ -24,12 +24,12 @@
     "dist/"
   ],
   "devDependencies": {
-    "vue": "^3.0.10",
+    "vue": "^3.2.9",
     "@types/resize-observer-browser": "^0.1.5",
-    "typescript": "^4.3.2",
+    "typescript": "^4.2.2",
     "shx": "^0.3.3"
   },
   "dependencies": {
-    "@inovex.de/elements": "^3.0.1"
+    "@inovex.de/elements": "^4.1.0"
   }
 }

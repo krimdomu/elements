@@ -93,7 +93,7 @@
   },
   "devDependencies": {
     "@stencil/angular-output-target": "^0.0.5",
-    "@stencil/vue-output-target": "^0.4.3",
+    "@stencil/vue-output-target": "^0.5.1",
     "@stencil/sass": "^1.4.1",
     "@types/classnames": "^2.2.6",
     "@types/jest": "26.0.14",

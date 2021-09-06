@@ -108,6 +108,21 @@ export const config: Config = {
     vueOutputTarget({
       componentCorePackage: '@inovex.de/elements',
       proxiesFile: '../elements-vue/src/components.ts',
+      componentModels: [
+        {
+          elements: [
+            'ino-input',
+            'ino-select',
+            'ino-textarea',
+            'ino-range',
+            'ino-datepicker',
+            'ino-checkbox',
+          ],
+          event: 'v-on-change',
+          externalEvent: 'on-change',
+          targetAttr: 'value',
+        },
+      ],
     }),
   ],
   plugins: [

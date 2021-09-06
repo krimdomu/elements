@@ -5,488 +5,521 @@ import { defineContainer } from './vue-component-lib/utils';
 
 import type { JSX } from '@inovex.de/elements';
 
-
-
-
-export const InoButton = /*@__PURE__*/ defineContainer<JSX.InoButton>('ino-button', [
-  'autoFocus',
-  'disabled',
-  'name',
-  'form',
-  'type',
-  'inoColorScheme',
-  'inoEdgeMirrored',
-  'inoFill',
-  'inoDense',
-  'inoLoading'
+export const InoAutocomplete = /*@__PURE__*/ defineContainer<
+  JSX.InoAutocomplete
+>('ino-autocomplete', undefined, [
+  'debounceTimeout',
+  'noOptionsText',
+  'optionSelected',
 ]);
 
+export const InoButton = /*@__PURE__*/ defineContainer<JSX.InoButton>(
+  'ino-button',
+  undefined,
+  [
+    'autoFocus',
+    'disabled',
+    'name',
+    'form',
+    'type',
+    'colorScheme',
+    'edgeMirrored',
+    'fill',
+    'dense',
+    'loading',
+  ]
+);
 
-export const InoCard = /*@__PURE__*/ defineContainer<JSX.InoCard>('ino-card', [
-  'inoSelected',
-  'inoDisableElevation'
-]);
+export const InoCard = /*@__PURE__*/ defineContainer<JSX.InoCard>(
+  'ino-card',
+  undefined,
+  ['selected', 'disableElevation']
+);
 
+export const InoCarousel = /*@__PURE__*/ defineContainer<JSX.InoCarousel>(
+  'ino-carousel',
+  undefined,
+  [
+    'value',
+    'autoplay',
+    'animated',
+    'hideButtons',
+    'infinite',
+    'intermission',
+    'reverse',
+  ]
+);
 
-export const InoCarousel = /*@__PURE__*/ defineContainer<JSX.InoCarousel>('ino-carousel', [
+export const InoCarouselSlide = /*@__PURE__*/ defineContainer<
+  JSX.InoCarouselSlide
+>('ino-carousel-slide', undefined, ['src', 'value']);
+
+export const InoCheckbox = /*@__PURE__*/ defineContainer<JSX.InoCheckbox>(
+  'ino-checkbox',
+  undefined,
+  [
+    'checked',
+    'disabled',
+    'name',
+    'value',
+    'selection',
+    'indeterminate',
+    'checkedChange',
+  ],
   'value',
-  'inoAutoplay',
-  'inoAnimated',
-  'inoHideButtons',
-  'inoInfinite',
-  'inoIntermission',
-  'inoReverse'
-]);
+  'v-on-change',
+  'on-change'
+);
 
+export const InoChip = /*@__PURE__*/ defineContainer<JSX.InoChip>(
+  'ino-chip',
+  undefined,
+  [
+    'colorScheme',
+    'fill',
+    'icon',
+    'label',
+    'value',
+    'removable',
+    'selectable',
+    'selected',
+    'removeChip',
+  ]
+);
 
-export const InoCarouselSlide = /*@__PURE__*/ defineContainer<JSX.InoCarouselSlide>('ino-carousel-slide', [
-  'src',
-  'value'
-]);
+export const InoChipSet = /*@__PURE__*/ defineContainer<JSX.InoChipSet>(
+  'ino-chip-set',
+  undefined,
+  ['type', 'updateChipSet']
+);
 
+export const InoControlItem = /*@__PURE__*/ defineContainer<JSX.InoControlItem>(
+  'ino-control-item',
+  undefined,
+  [
+    'role',
+    'text',
+    'secondaryText',
+    'selected',
+    'activated',
+    'checked',
+    'disabled',
+    'name',
+    'value',
+    'indeterminate',
+    'trailing',
+    'checkedChange',
+  ]
+);
 
-export const InoCheckbox = /*@__PURE__*/ defineContainer<JSX.InoCheckbox>('ino-checkbox', [
+export const InoDatepicker = /*@__PURE__*/ defineContainer<JSX.InoDatepicker>(
+  'ino-datepicker',
+  undefined,
+  [
+    'autoFocus',
+    'disabled',
+    'name',
+    'required',
+    'showLabelHint',
+    'value',
+    'min',
+    'max',
+    'outline',
+    'label',
+    'helper',
+    'helperPersistent',
+    'helperValidation',
+    'range',
+    'dateFormat',
+    'defaultDate',
+    'defaultHour',
+    'defaultMinute',
+    'twelveHourTime',
+    'type',
+    'minuteStep',
+    'hourStep',
+    'valueChange',
+  ],
+  'value',
+  'v-on-change',
+  'on-change'
+);
+
+export const InoDialog = /*@__PURE__*/ defineContainer<JSX.InoDialog>(
+  'ino-dialog',
+  undefined,
+  ['open', 'openChange']
+);
+
+export const InoFab = /*@__PURE__*/ defineContainer<JSX.InoFab>(
+  'ino-fab',
+  undefined,
+  [
+    'icon',
+    'label',
+    'extended',
+    'edgePosition',
+    'disabled',
+    'mini',
+    'tooltipPlacement',
+  ]
+);
+
+export const InoFabSet = /*@__PURE__*/ defineContainer<JSX.InoFabSet>(
+  'ino-fab-set',
+  undefined,
+  ['dialDirection', 'topBottomLocation', 'leftRightLocation', 'openDial']
+);
+
+export const InoFormRow = /*@__PURE__*/ defineContainer<JSX.InoFormRow>(
+  'ino-form-row',
+  undefined,
+  ['label', 'mandatory']
+);
+
+export const InoHeader = /*@__PURE__*/ defineContainer<JSX.InoHeader>(
+  'ino-header',
+  undefined,
+  ['text']
+);
+
+export const InoIcon = /*@__PURE__*/ defineContainer<JSX.InoIcon>(
+  'ino-icon',
+  undefined,
+  ['icon', 'colorSecondary', 'clickable', 'src', 'svgTitle', 'clickEl']
+);
+
+export const InoIconButton = /*@__PURE__*/ defineContainer<JSX.InoIconButton>(
+  'ino-icon-button',
+  undefined,
+  [
+    'autoFocus',
+    'disabled',
+    'activated',
+    'colorScheme',
+    'filled',
+    'icon',
+    'type',
+    'clickEl',
+  ]
+);
+
+export const InoImg = /*@__PURE__*/ defineContainer<JSX.InoImg>(
+  'ino-img',
+  undefined,
+  [
+    'alt',
+    'decoding',
+    'height',
+    'sizes',
+    'src',
+    'srcset',
+    'width',
+    'usemap',
+    'fallbackIcon',
+    'imgListItem',
+    'label',
+    'ratioWidth',
+    'ratioHeight',
+    'rounded',
+  ]
+);
+
+export const InoImgList = /*@__PURE__*/ defineContainer<JSX.InoImgList>(
+  'ino-img-list',
+  undefined,
+  ['masonry', 'encloseLabel']
+);
+
+export const InoInput = /*@__PURE__*/ defineContainer<JSX.InoInput>(
+  'ino-input',
+  undefined,
+  [
+    'autocomplete',
+    'autoFocus',
+    'disabled',
+    'min',
+    'max',
+    'maxlength',
+    'step',
+    'name',
+    'pattern',
+    'placeholder',
+    'required',
+    'size',
+    'type',
+    'value',
+    'thousandsSeparator',
+    'decimalPlaces',
+    'unit',
+    'showLabelHint',
+    'outline',
+    'label',
+    'helper',
+    'helperPersistent',
+    'helperValidation',
+    'helperCharacterCounter',
+    'dataList',
+    'error',
+    'valueChange',
+    'inoBlur',
+    'inoFocus',
+  ],
+  'value',
+  'v-on-change',
+  'on-change'
+);
+
+export const InoInputFile = /*@__PURE__*/ defineContainer<JSX.InoInputFile>(
+  'ino-input-file',
+  undefined,
+  [
+    'accept',
+    'autoFocus',
+    'disabled',
+    'multiple',
+    'name',
+    'required',
+    'label',
+    'dragAndDrop',
+    'dragAndDropText',
+    'dragAndDropSecondaryText',
+    'changeFile',
+  ]
+);
+
+export const InoLabel = /*@__PURE__*/ defineContainer<JSX.InoLabel>(
+  'ino-label',
+  undefined,
+  ['outline', 'text', 'required', 'showHint', 'disabled']
+);
+
+export const InoList = /*@__PURE__*/ defineContainer<JSX.InoList>(
+  'ino-list',
+  undefined,
+  ['dense', 'twoLines', 'avatar']
+);
+
+export const InoListDivider = /*@__PURE__*/ defineContainer<JSX.InoListDivider>(
+  'ino-list-divider',
+  undefined,
+  ['betweenLists', 'padded', 'inset']
+);
+
+export const InoListItem = /*@__PURE__*/ defineContainer<JSX.InoListItem>(
+  'ino-list-item',
+  undefined,
+  ['text', 'secondaryText', 'selected', 'activated', 'disabled', 'clickEl']
+);
+
+export const InoMenu = /*@__PURE__*/ defineContainer<JSX.InoMenu>(
+  'ino-menu',
+  undefined,
+  ['placement']
+);
+
+export const InoNavDrawer = /*@__PURE__*/ defineContainer<JSX.InoNavDrawer>(
+  'ino-nav-drawer',
+  undefined,
+  ['open', 'anchor', 'variant', 'openChange']
+);
+
+export const InoNavItem = /*@__PURE__*/ defineContainer<JSX.InoNavItem>(
+  'ino-nav-item',
+  undefined,
+  ['text', 'subText', 'activated', 'disabled']
+);
+
+export const InoOption = /*@__PURE__*/ defineContainer<JSX.InoOption>(
+  'ino-option',
+  undefined,
+  ['disabled', 'selected', 'value', 'clickEl']
+);
+
+export const InoOptionGroup = /*@__PURE__*/ defineContainer<JSX.InoOptionGroup>(
+  'ino-option-group',
+  undefined,
+  ['label']
+);
+
+export const InoPopover = /*@__PURE__*/ defineContainer<JSX.InoPopover>(
+  'ino-popover',
+  undefined,
+  [
+    'placement',
+    'for',
+    'distance',
+    'colorScheme',
+    'interactive',
+    'trigger',
+    'controlled',
+    'visible',
+    'visibleChanged',
+  ]
+);
+
+export const InoProgressBar = /*@__PURE__*/ defineContainer<JSX.InoProgressBar>(
+  'ino-progress-bar',
+  undefined,
+  ['buffer', 'indeterminate', 'label', 'reversed', 'progress']
+);
+
+export const InoRadio = /*@__PURE__*/ defineContainer<JSX.InoRadio>(
+  'ino-radio',
+  undefined,
+  ['checked', 'disabled', 'name', 'value', 'checkedChange']
+);
+
+export const InoRadioGroup = /*@__PURE__*/ defineContainer<JSX.InoRadioGroup>(
+  'ino-radio-group',
+  undefined,
+  ['value']
+);
+
+export const InoRange = /*@__PURE__*/ defineContainer<JSX.InoRange>(
+  'ino-range',
+  undefined,
+  [
+    'disabled',
+    'colorScheme',
+    'discrete',
+    'markers',
+    'name',
+    'min',
+    'max',
+    'value',
+    'step',
+    'valueChange',
+  ],
+  'value',
+  'v-on-change',
+  'on-change'
+);
+
+export const InoSegmentButton = /*@__PURE__*/ defineContainer<
+  JSX.InoSegmentButton
+>('ino-segment-button', undefined, [
   'checked',
   'disabled',
+  'dense',
   'name',
   'value',
-  'inoSelection',
-  'indeterminate',
-  'checkedChange'
+  'checkedChange',
 ]);
 
+export const InoSegmentGroup = /*@__PURE__*/ defineContainer<
+  JSX.InoSegmentGroup
+>('ino-segment-group', undefined, ['name', 'value']);
 
-export const InoChip = /*@__PURE__*/ defineContainer<JSX.InoChip>('ino-chip', [
-  'inoColorScheme',
-  'inoFill',
-  'inoIcon',
-  'inoLabel',
-  'inoValue',
-  'inoRemovable',
-  'inoSelectable',
-  'inoSelected',
-  'removeChip'
-]);
-
-
-export const InoChipSet = /*@__PURE__*/ defineContainer<JSX.InoChipSet>('ino-chip-set', [
-  'inoType',
-  'updateChipSet'
-]);
-
-
-export const InoControlItem = /*@__PURE__*/ defineContainer<JSX.InoControlItem>('ino-control-item', [
-  'inoRole',
-  'inoId',
-  'inoText',
-  'inoSecondaryText',
-  'inoSelected',
-  'inoActivated',
-  'inoDisabled',
-  'checked',
-  'disabled',
-  'name',
+export const InoSelect = /*@__PURE__*/ defineContainer<JSX.InoSelect>(
+  'ino-select',
+  undefined,
+  [
+    'disabled',
+    'name',
+    'required',
+    'showLabelHint',
+    'label',
+    'outline',
+    'value',
+    'valueChange',
+  ],
   'value',
-  'indeterminate',
-  'inoTrailing',
-  'checkedChange'
-]);
+  'v-on-change',
+  'on-change'
+);
 
+export const InoSidebar = /*@__PURE__*/ defineContainer<JSX.InoSidebar>(
+  'ino-sidebar',
+  undefined,
+  ['alignRight', 'open', 'name', 'openChange']
+);
 
-export const InoDatepicker = /*@__PURE__*/ defineContainer<JSX.InoDatepicker>('ino-datepicker', [
-  'autoFocus',
-  'disabled',
-  'name',
-  'required',
-  'inoShowLabelHint',
+export const InoSnackbar = /*@__PURE__*/ defineContainer<JSX.InoSnackbar>(
+  'ino-snackbar',
+  undefined,
+  [
+    'message',
+    'actionText',
+    'alignment',
+    'type',
+    'timeout',
+    'stayVisibleOnHover',
+    'actionClick',
+    'hideEl',
+  ]
+);
+
+export const InoSpinner = /*@__PURE__*/ defineContainer<JSX.InoSpinner>(
+  'ino-spinner',
+  undefined,
+  ['type', 'colorScheme', 'modal', 'height', 'width']
+);
+
+export const InoSwitch = /*@__PURE__*/ defineContainer<JSX.InoSwitch>(
+  'ino-switch',
+  undefined,
+  ['checked', 'disabled', 'name', 'colorScheme', 'checkedChange']
+);
+
+export const InoTab = /*@__PURE__*/ defineContainer<JSX.InoTab>(
+  'ino-tab',
+  undefined,
+  ['icon', 'label', 'stacked', 'indicatorContentWidth', 'interacted']
+);
+
+export const InoTabBar = /*@__PURE__*/ defineContainer<JSX.InoTabBar>(
+  'ino-tab-bar',
+  undefined,
+  ['activeTab', 'autoFocus', 'activeTabChange']
+);
+
+export const InoTable = /*@__PURE__*/ defineContainer<JSX.InoTable>(
+  'ino-table',
+  undefined
+);
+
+export const InoTableCell = /*@__PURE__*/ defineContainer<JSX.InoTableCell>(
+  'ino-table-cell',
+  undefined,
+  ['numeric']
+);
+
+export const InoTableRow = /*@__PURE__*/ defineContainer<JSX.InoTableRow>(
+  'ino-table-row',
+  undefined,
+  ['headerRow', 'selected']
+);
+
+export const InoTextarea = /*@__PURE__*/ defineContainer<JSX.InoTextarea>(
+  'ino-textarea',
+  undefined,
+  [
+    'autoFocus',
+    'cols',
+    'disabled',
+    'maxlength',
+    'minlength',
+    'showCharacterCounter',
+    'name',
+    'placeholder',
+    'required',
+    'showLabelHint',
+    'rows',
+    'value',
+    'outline',
+    'autogrow',
+    'label',
+    'inoBlur',
+    'valueChange',
+  ],
   'value',
-  'min',
-  'max',
-  'inoOutline',
-  'inoLabel',
-  'inoHelper',
-  'inoHelperPersistent',
-  'inoHelperValidation',
-  'inoRange',
-  'inoDateFormat',
-  'inoDefaultDate',
-  'inoDefaultHour',
-  'inoDefaultMinute',
-  'inoTwelveHourTime',
-  'inoType',
-  'minuteStep',
-  'hourStep',
-  'valueChange'
-]);
-
-
-export const InoDialog = /*@__PURE__*/ defineContainer<JSX.InoDialog>('ino-dialog', [
-  'inoOpen',
-  'openChange'
-]);
-
-
-export const InoFab = /*@__PURE__*/ defineContainer<JSX.InoFab>('ino-fab', [
-  'inoIcon',
-  'inoLabel',
-  'inoExtended',
-  'inoEdgePosition',
-  'inoDisabled',
-  'inoMini',
-  'inoTooltipPlacement'
-]);
-
-
-export const InoFabSet = /*@__PURE__*/ defineContainer<JSX.InoFabSet>('ino-fab-set', [
-  'inoDialDirection',
-  'inoTopBottomLocation',
-  'inoLeftRightLocation',
-  'inoOpenDial'
-]);
-
-
-export const InoFormRow = /*@__PURE__*/ defineContainer<JSX.InoFormRow>('ino-form-row', [
-  'inoLabel',
-  'inoMandatory'
-]);
-
-
-export const InoHeader = /*@__PURE__*/ defineContainer<JSX.InoHeader>('ino-header', [
-  'inoTitle'
-]);
-
-
-export const InoIcon = /*@__PURE__*/ defineContainer<JSX.InoIcon>('ino-icon', [
-  'inoIcon',
-  'inoColorSecondary',
-  'inoClickable',
-  'src',
-  'svgTitle',
-  'clickEl'
-]);
-
-
-export const InoIconButton = /*@__PURE__*/ defineContainer<JSX.InoIconButton>('ino-icon-button', [
-  'autoFocus',
-  'disabled',
-  'inoActivated',
-  'inoColorScheme',
-  'inoFilled',
-  'inoIcon',
-  'type',
-  'clickEl'
-]);
-
-
-export const InoImg = /*@__PURE__*/ defineContainer<JSX.InoImg>('ino-img', [
-  'alt',
-  'decoding',
-  'height',
-  'sizes',
-  'src',
-  'srcset',
-  'width',
-  'usemap',
-  'inoFallbackIcon',
-  'inoImgListItem',
-  'inoLabel',
-  'inoRatioWidth',
-  'inoRatioHeight',
-  'inoRounded'
-]);
-
-
-export const InoImgList = /*@__PURE__*/ defineContainer<JSX.InoImgList>('ino-img-list', [
-  'inoMasonry',
-  'inoEncloseLabel'
-]);
-
-
-export const InoInput = /*@__PURE__*/ defineContainer<JSX.InoInput>('ino-input', [
-  'autocomplete',
-  'autoFocus',
-  'disabled',
-  'min',
-  'max',
-  'maxlength',
-  'step',
-  'name',
-  'pattern',
-  'placeholder',
-  'required',
-  'size',
-  'type',
-  'value',
-  'inoThousandsSeparator',
-  'inoDecimalPlaces',
-  'inoUnit',
-  'inoShowLabelHint',
-  'inoOutline',
-  'inoLabel',
-  'inoHelper',
-  'inoHelperPersistent',
-  'inoHelperValidation',
-  'inoHelperCharacterCounter',
-  'inoDataList',
-  'inoError',
-  'valueChange',
-  'inoBlur',
-  'inoFocus'
-]);
-
-
-export const InoInputFile = /*@__PURE__*/ defineContainer<JSX.InoInputFile>('ino-input-file', [
-  'accept',
-  'autoFocus',
-  'disabled',
-  'multiple',
-  'name',
-  'required',
-  'inoLabel',
-  'inoDragAndDrop',
-  'inoDragAndDropText',
-  'inoDragAndDropSecondaryText',
-  'changeFile'
-]);
-
-
-export const InoLabel = /*@__PURE__*/ defineContainer<JSX.InoLabel>('ino-label', [
-  'inoOutline',
-  'inoText',
-  'inoRequired',
-  'inoShowHint',
-  'inoDisabled'
-]);
-
-
-export const InoList = /*@__PURE__*/ defineContainer<JSX.InoList>('ino-list', [
-  'inoDense',
-  'inoTwoLines',
-  'inoAvatar'
-]);
-
-
-export const InoListDivider = /*@__PURE__*/ defineContainer<JSX.InoListDivider>('ino-list-divider', [
-  'inoBetweenLists',
-  'inoPadded',
-  'inoInset'
-]);
-
-
-export const InoListItem = /*@__PURE__*/ defineContainer<JSX.InoListItem>('ino-list-item', [
-  'inoText',
-  'inoSecondaryText',
-  'inoSelected',
-  'inoActivated',
-  'inoDisabled',
-  'clickEl'
-]);
-
-
-export const InoMenu = /*@__PURE__*/ defineContainer<JSX.InoMenu>('ino-menu', [
-  'inoPlacement'
-]);
-
-
-export const InoNavDrawer = /*@__PURE__*/ defineContainer<JSX.InoNavDrawer>('ino-nav-drawer', [
-  'inoOpen',
-  'inoAnchor',
-  'inoVariant',
-  'openChange'
-]);
-
-
-export const InoNavItem = /*@__PURE__*/ defineContainer<JSX.InoNavItem>('ino-nav-item', [
-  'inoText',
-  'inoSubText',
-  'inoActivated',
-  'inoDisabled'
-]);
-
-
-export const InoOption = /*@__PURE__*/ defineContainer<JSX.InoOption>('ino-option', [
-  'disabled',
-  'selected',
-  'value'
-]);
-
-
-export const InoOptionGroup = /*@__PURE__*/ defineContainer<JSX.InoOptionGroup>('ino-option-group', [
-  'inoLabel'
-]);
-
-
-export const InoPopover = /*@__PURE__*/ defineContainer<JSX.InoPopover>('ino-popover', [
-  'inoPlacement',
-  'inoFor',
-  'inoDistance',
-  'inoColorScheme',
-  'inoInteractive',
-  'inoTrigger',
-  'inoControlled',
-  'inoVisible',
-  'inoVisibleChanged'
-]);
-
-
-export const InoProgressBar = /*@__PURE__*/ defineContainer<JSX.InoProgressBar>('ino-progress-bar', [
-  'inoBuffer',
-  'inoIndeterminate',
-  'inoLabel',
-  'inoReversed',
-  'inoProgress'
-]);
-
-
-export const InoRadio = /*@__PURE__*/ defineContainer<JSX.InoRadio>('ino-radio', [
-  'checked',
-  'disabled',
-  'name',
-  'value',
-  'checkedChange'
-]);
-
-
-export const InoRadioGroup = /*@__PURE__*/ defineContainer<JSX.InoRadioGroup>('ino-radio-group', [
-  'value'
-]);
-
-
-export const InoRange = /*@__PURE__*/ defineContainer<JSX.InoRange>('ino-range', [
-  'disabled',
-  'inoColorScheme',
-  'inoDiscrete',
-  'inoMarkers',
-  'name',
-  'min',
-  'max',
-  'value',
-  'step',
-  'valueChange'
-]);
-
-
-export const InoSegmentButton = /*@__PURE__*/ defineContainer<JSX.InoSegmentButton>('ino-segment-button', [
-  'checked',
-  'disabled',
-  'inoDense',
-  'name',
-  'value',
-  'checkedChange'
-]);
-
-
-export const InoSegmentGroup = /*@__PURE__*/ defineContainer<JSX.InoSegmentGroup>('ino-segment-group', [
-  'name',
-  'value'
-]);
-
-
-export const InoSelect = /*@__PURE__*/ defineContainer<JSX.InoSelect>('ino-select', [
-  'disabled',
-  'name',
-  'required',
-  'inoShowLabelHint',
-  'inoLabel',
-  'inoOutline',
-  'value',
-  'valueChange'
-]);
-
-
-export const InoSidebar = /*@__PURE__*/ defineContainer<JSX.InoSidebar>('ino-sidebar', [
-  'inoAlignRight',
-  'inoOpen',
-  'name',
-  'openChange'
-]);
-
-
-export const InoSnackbar = /*@__PURE__*/ defineContainer<JSX.InoSnackbar>('ino-snackbar', [
-  'inoMessage',
-  'inoActionText',
-  'inoAlignment',
-  'inoType',
-  'inoTimeout',
-  'inoStayVisibleOnHover',
-  'inoActionClick',
-  'hideEl'
-]);
-
-
-export const InoSpinner = /*@__PURE__*/ defineContainer<JSX.InoSpinner>('ino-spinner', [
-  'inoType',
-  'inoColorScheme',
-  'inoModal',
-  'inoHeight',
-  'inoWidth'
-]);
-
-
-export const InoSwitch = /*@__PURE__*/ defineContainer<JSX.InoSwitch>('ino-switch', [
-  'checked',
-  'disabled',
-  'name',
-  'inoColorScheme',
-  'checkedChange'
-]);
-
-
-export const InoTab = /*@__PURE__*/ defineContainer<JSX.InoTab>('ino-tab', [
-  'inoIcon',
-  'inoLabel',
-  'inoStacked',
-  'inoIndicatorContentWidth',
-  'inoInteracted'
-]);
-
-
-export const InoTabBar = /*@__PURE__*/ defineContainer<JSX.InoTabBar>('ino-tab-bar', [
-  'inoActiveTab',
-  'activeTabChange'
-]);
-
-
-export const InoTable = /*@__PURE__*/ defineContainer<JSX.InoTable>('ino-table');
-
-
-export const InoTableCell = /*@__PURE__*/ defineContainer<JSX.InoTableCell>('ino-table-cell', [
-  'inoNumeric'
-]);
-
-
-export const InoTableRow = /*@__PURE__*/ defineContainer<JSX.InoTableRow>('ino-table-row', [
-  'inoHeaderRow',
-  'inoSelected'
-]);
-
-
-export const InoTextarea = /*@__PURE__*/ defineContainer<JSX.InoTextarea>('ino-textarea', [
-  'autoFocus',
-  'cols',
-  'disabled',
-  'maxlength',
-  'minlength',
-  'showCharacterCounter',
-  'name',
-  'placeholder',
-  'required',
-  'inoShowLabelHint',
-  'rows',
-  'value',
-  'inoOutline',
-  'autogrow',
-  'inoLabel',
-  'inoBlur',
-  'valueChange'
-]);
-
-
-export const InoTooltip = /*@__PURE__*/ defineContainer<JSX.InoTooltip>('ino-tooltip', [
-  'inoColorScheme',
-  'inoPlacement',
-  'inoFor',
-  'inoTrigger',
-  'inoLabel'
-]);
-
+  'v-on-change',
+  'on-change'
+);
+
+export const InoTooltip = /*@__PURE__*/ defineContainer<JSX.InoTooltip>(
+  'ino-tooltip',
+  undefined,
+  ['colorScheme', 'placement', 'for', 'trigger', 'label']
+);
