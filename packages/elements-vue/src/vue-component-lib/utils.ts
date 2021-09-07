@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { VNode, defineComponent, getCurrentInstance, h, inject, ref, Ref } from 'vue';
 
 export interface InputProps extends Object {
@@ -108,7 +109,7 @@ export const defineContainer = <Props>(
       if (routerLink === EMPTY_PROP) return;
 
       if (navManager !== undefined) {
-        const navigationPayload: any = { event: ev };
+        let navigationPayload: any = { event: ev };
         for (const key in props) {
           const value = props[key];
           if (props.hasOwnProperty(key) && key.startsWith(ROUTER_PROP_PREFIX) && value !== EMPTY_PROP) {

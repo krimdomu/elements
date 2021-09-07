@@ -107,19 +107,36 @@ export const config: Config = {
     }),
     vueOutputTarget({
       componentCorePackage: '@inovex.de/elements',
-      proxiesFile: '../elements-vue/src/components.ts',
+      proxiesFile: '../elements-vue/src/proxies.ts',
+      excludeComponents: [
+        'ino-icon',
+        // Routing
+        'ino-nav-drawer',
+        'ino-tab-bar',
+        'ino-tab',
+        // Overlay
+        'ino-dialog',
+        'ino-popover',
+        'ino-snackbar',
+        'ino-tooltip',
+      ],
       componentModels: [
         {
-          elements: [
-            'ino-input',
-            'ino-select',
-            'ino-textarea',
-            'ino-range',
-            'ino-datepicker',
-            'ino-checkbox',
-          ],
-          event: 'v-on-change',
-          externalEvent: 'on-change',
+          elements: ['ino-checkbox', 'ino-radio', 'ino-switch', 'ino-control-item'],
+          targetAttr: 'checked',
+          event: 'v-checkedChange',
+          externalEvent: 'checkedChange'
+        },
+        {
+          elements: ['ino-input-file'],
+          targetAttr: 'value',
+          event: 'v-changeFile',
+          externalEvent: 'changeFile'
+        },
+        {
+          elements: ['ino-input', 'ino-select', 'ino-textarea', 'ino-range', 'ino-datepicker'],
+          event: 'v-valueChange',
+          externalEvent: 'valueChange',
           targetAttr: 'value',
         },
       ],
