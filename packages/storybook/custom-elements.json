@@ -678,16 +678,17 @@
           "required": false
         },
         {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "",
+          "defaultValue": "false",
+          "required": false
+        },
+        {
           "name": "fill",
           "type": "\"outline\" | \"solid\"",
           "description": "The fill type of this element.",
           "defaultValue": "'solid'",
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "string",
-          "description": "Prepends an icon to the chip label.",
           "required": false
         },
         {
@@ -699,14 +700,14 @@
         {
           "name": "removable",
           "type": "boolean",
-          "description": "Adds a close icon on the right side of this chip.\n\nIf applied, emits the `removeChip` event.",
+          "description": "Adds a close icon on the right side of this chip.\n\nIf applied, emits the `removeChip` event on remove click.",
           "defaultValue": "false",
           "required": false
         },
         {
           "name": "selectable",
           "type": "boolean",
-          "description": "Adds a checkmark if the icon is selected.",
+          "description": "Makes the chip selectable.\nWill be set by the `<ino-chip-set>`.",
           "defaultValue": "false",
           "required": false
         },
@@ -733,16 +734,17 @@
           "required": false
         },
         {
+          "name": "disabled",
+          "type": "boolean",
+          "description": "",
+          "defaultValue": "false",
+          "required": false
+        },
+        {
           "name": "fill",
           "type": "\"outline\" | \"solid\"",
           "description": "The fill type of this element.",
           "defaultValue": "'solid'",
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "string",
-          "description": "Prepends an icon to the chip label.",
           "required": false
         },
         {
@@ -754,14 +756,14 @@
         {
           "name": "removable",
           "type": "boolean",
-          "description": "Adds a close icon on the right side of this chip.\n\nIf applied, emits the `removeChip` event.",
+          "description": "Adds a close icon on the right side of this chip.\n\nIf applied, emits the `removeChip` event on remove click.",
           "defaultValue": "false",
           "required": false
         },
         {
           "name": "selectable",
           "type": "boolean",
-          "description": "Adds a checkmark if the icon is selected.",
+          "description": "Makes the chip selectable.\nWill be set by the `<ino-chip-set>`.",
           "defaultValue": "false",
           "required": false
         },
@@ -806,18 +808,18 @@
       "attributes": [
         {
           "name": "type",
-          "type": "\"\" | \"choice\" | \"filter\" | \"input\"",
-          "description": "The type of this chip set that indicates its behavior.\n\n`choice`: Single selection from a set of options\n`filter`: Multiple selection from a set of options\n`input`: Enable user input by converting text into chips",
-          "defaultValue": "''",
+          "type": "\"action\" | \"choice\" | \"filter\"",
+          "description": "The type of this chip set that indicates its behavior.\n\n`action`: Chips which have an action (default)\n`choice`: Single selection from a set of options\n`filter`: Multiple selection from a set of options",
+          "defaultValue": "'action'",
           "required": false
         }
       ],
       "properties": [
         {
           "name": "type",
-          "type": "\"\" | \"choice\" | \"filter\" | \"input\"",
-          "description": "The type of this chip set that indicates its behavior.\n\n`choice`: Single selection from a set of options\n`filter`: Multiple selection from a set of options\n`input`: Enable user input by converting text into chips",
-          "defaultValue": "''",
+          "type": "\"action\" | \"choice\" | \"filter\"",
+          "description": "The type of this chip set that indicates its behavior.\n\n`action`: Chips which have an action (default)\n`choice`: Single selection from a set of options\n`filter`: Multiple selection from a set of options",
+          "defaultValue": "'action'",
           "required": false
         }
       ],

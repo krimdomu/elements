@@ -136,13 +136,13 @@ export class InoCheckbox {
 import { Chip as IChip } from '@inovex.de/elements/dist/types/components/ino-chip/ino-chip';
 export declare interface InoChip extends Components.InoChip {}
 @ProxyCmp({
-  inputs: ['colorScheme', 'fill', 'icon', 'label', 'removable', 'selectable', 'selected', 'value']
+  inputs: ['colorScheme', 'disabled', 'fill', 'label', 'removable', 'selectable', 'selected', 'value']
 })
 @Component({
   selector: 'ino-chip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['colorScheme', 'fill', 'icon', 'label', 'removable', 'selectable', 'selected', 'value'],
+  inputs: ['colorScheme', 'disabled', 'fill', 'label', 'removable', 'selectable', 'selected', 'value'],
   outputs: ['removeChip']
 })
 export class InoChip {
