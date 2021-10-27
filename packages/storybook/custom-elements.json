@@ -3576,13 +3576,6 @@
           "description": "Sets the progress of the progress bar.\nShould always be between 0 and 1",
           "defaultValue": "0",
           "required": false
-        },
-        {
-          "name": "reversed",
-          "type": "boolean",
-          "description": "Reverses the progress bar",
-          "defaultValue": "false",
-          "required": false
         }
       ],
       "properties": [
@@ -3611,13 +3604,6 @@
           "type": "number",
           "description": "Sets the progress of the progress bar.\nShould always be between 0 and 1",
           "defaultValue": "0",
-          "required": false
-        },
-        {
-          "name": "reversed",
-          "type": "boolean",
-          "description": "Reverses the progress bar",
-          "defaultValue": "false",
           "required": false
         }
       ],
