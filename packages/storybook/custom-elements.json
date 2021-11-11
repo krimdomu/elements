@@ -707,7 +707,7 @@
         {
           "name": "selectable",
           "type": "boolean",
-          "description": "Makes the chip selectable.\nWill be set by the `<ino-chip-set>`.",
+          "description": "Makes the chip selectable.",
           "defaultValue": "false",
           "required": false
         },
@@ -763,7 +763,7 @@
         {
           "name": "selectable",
           "type": "boolean",
-          "description": "Makes the chip selectable.\nWill be set by the `<ino-chip-set>`.",
+          "description": "Makes the chip selectable.",
           "defaultValue": "false",
           "required": false
         },
@@ -783,6 +783,10 @@
       ],
       "events": [
         {
+          "name": "chipClicked",
+          "description": ""
+        },
+        {
           "name": "removeChip",
           "description": "Event that emits as soon as the user removes this chip.\n\nListen to this event to hide or destroy this chip.\nThe event only emits if the property `removable` is true."
         }
@@ -796,44 +800,6 @@
         {
           "name": "icon-trailing",
           "description": "For the icon to be appended - disables the `removable` property"
-        }
-      ],
-      "cssProperties": [],
-      "cssParts": []
-    },
-    {
-      "name": "ino-chip-set",
-      "path": "./src/components/ino-chip-set/ino-chip-set.tsx",
-      "description": "The ino-chip-set is a wrapper component for `ino-chip` components. It enables the user to filter content,\nselect a choice, or trigger an action.\n\n> See the `ino-chip` documentation for more details about a single instance of a chip.",
-      "attributes": [
-        {
-          "name": "type",
-          "type": "\"action\" | \"choice\" | \"filter\"",
-          "description": "The type of this chip set that indicates its behavior.\n\n`action`: Chips which have an action (default)\n`choice`: Single selection from a set of options\n`filter`: Multiple selection from a set of options",
-          "defaultValue": "'action'",
-          "required": false
-        }
-      ],
-      "properties": [
-        {
-          "name": "type",
-          "type": "\"action\" | \"choice\" | \"filter\"",
-          "description": "The type of this chip set that indicates its behavior.\n\n`action`: Chips which have an action (default)\n`choice`: Single selection from a set of options\n`filter`: Multiple selection from a set of options",
-          "defaultValue": "'action'",
-          "required": false
-        }
-      ],
-      "events": [
-        {
-          "name": "updateChipSet",
-          "description": "Event that emits when the value of this element changes.\n\nOnly applicable if `inoType` is `choice` or `filter`."
-        }
-      ],
-      "methods": [],
-      "slots": [
-        {
-          "name": "default",
-          "description": "One or more `ino-chip`"
         }
       ],
       "cssProperties": [],

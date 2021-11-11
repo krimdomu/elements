@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorScheme, ButtonType, ChipSetType, ChipSurface, ColorScheme, HorizontalLocation, ImageDecodingTypes, Locations, NavDrawerAnchor, NavDrawerVariant, SnackbarType, SpinnerType, SurfaceType, TooltipTrigger, VerticalLocation } from "./components/types";
+import { ButtonColorScheme, ButtonType, ChipSurface, ColorScheme, HorizontalLocation, ImageDecodingTypes, Locations, NavDrawerAnchor, NavDrawerVariant, SnackbarType, SpinnerType, SurfaceType, TooltipTrigger, VerticalLocation } from "./components/types";
 import { PickerTypeKeys } from "./components/ino-datepicker/picker-factory";
 import { Placement } from "tippy.js";
 export namespace Components {
@@ -160,7 +160,7 @@ export namespace Components {
          */
         "removable": boolean;
         /**
-          * Makes the chip selectable. Will be set by the `<ino-chip-set>`.
+          * Makes the chip selectable.
          */
         "selectable": boolean;
         /**
@@ -171,12 +171,6 @@ export namespace Components {
           * The value of this chip.  **Required** for chips as part of sets of type `filter` or `choice`.
          */
         "value"?: string;
-    }
-    interface InoChipSet {
-        /**
-          * The type of this chip set that indicates its behavior.  `action`: Chips which have an action (default) `choice`: Single selection from a set of options `filter`: Multiple selection from a set of options
-         */
-        "type": ChipSetType;
     }
     interface InoControlItem {
         /**
@@ -1257,12 +1251,6 @@ declare global {
         prototype: HTMLInoChipElement;
         new (): HTMLInoChipElement;
     };
-    interface HTMLInoChipSetElement extends Components.InoChipSet, HTMLStencilElement {
-    }
-    var HTMLInoChipSetElement: {
-        prototype: HTMLInoChipSetElement;
-        new (): HTMLInoChipSetElement;
-    };
     interface HTMLInoControlItemElement extends Components.InoControlItem, HTMLStencilElement {
     }
     var HTMLInoControlItemElement: {
@@ -1517,7 +1505,6 @@ declare global {
         "ino-carousel-slide": HTMLInoCarouselSlideElement;
         "ino-checkbox": HTMLInoCheckboxElement;
         "ino-chip": HTMLInoChipElement;
-        "ino-chip-set": HTMLInoChipSetElement;
         "ino-control-item": HTMLInoControlItemElement;
         "ino-datepicker": HTMLInoDatepickerElement;
         "ino-dialog": HTMLInoDialogElement;
@@ -1716,6 +1703,7 @@ declare namespace LocalJSX {
           * The label of this chip (**required**).
          */
         "label"?: string;
+        "onChipClicked"?: (event: CustomEvent<HTMLInoChipElement>) => void;
         /**
           * Event that emits as soon as the user removes this chip.  Listen to this event to hide or destroy this chip. The event only emits if the property `removable` is true.
          */
@@ -1725,7 +1713,7 @@ declare namespace LocalJSX {
          */
         "removable"?: boolean;
         /**
-          * Makes the chip selectable. Will be set by the `<ino-chip-set>`.
+          * Makes the chip selectable.
          */
         "selectable"?: boolean;
         /**
@@ -1736,16 +1724,6 @@ declare namespace LocalJSX {
           * The value of this chip.  **Required** for chips as part of sets of type `filter` or `choice`.
          */
         "value"?: string;
-    }
-    interface InoChipSet {
-        /**
-          * Event that emits when the value of this element changes.  Only applicable if `inoType` is `choice` or `filter`.
-         */
-        "onUpdateChipSet"?: (event: CustomEvent<any>) => void;
-        /**
-          * The type of this chip set that indicates its behavior.  `action`: Chips which have an action (default) `choice`: Single selection from a set of options `filter`: Multiple selection from a set of options
-         */
-        "type"?: ChipSetType;
     }
     interface InoControlItem {
         /**
@@ -2854,7 +2832,6 @@ declare namespace LocalJSX {
         "ino-carousel-slide": InoCarouselSlide;
         "ino-checkbox": InoCheckbox;
         "ino-chip": InoChip;
-        "ino-chip-set": InoChipSet;
         "ino-control-item": InoControlItem;
         "ino-datepicker": InoDatepicker;
         "ino-dialog": InoDialog;
@@ -2909,7 +2886,6 @@ declare module "@stencil/core" {
             "ino-carousel-slide": LocalJSX.InoCarouselSlide & JSXBase.HTMLAttributes<HTMLInoCarouselSlideElement>;
             "ino-checkbox": LocalJSX.InoCheckbox & JSXBase.HTMLAttributes<HTMLInoCheckboxElement>;
             "ino-chip": LocalJSX.InoChip & JSXBase.HTMLAttributes<HTMLInoChipElement>;
-            "ino-chip-set": LocalJSX.InoChipSet & JSXBase.HTMLAttributes<HTMLInoChipSetElement>;
             "ino-control-item": LocalJSX.InoControlItem & JSXBase.HTMLAttributes<HTMLInoControlItemElement>;
             "ino-datepicker": LocalJSX.InoDatepicker & JSXBase.HTMLAttributes<HTMLInoDatepickerElement>;
             "ino-dialog": LocalJSX.InoDialog & JSXBase.HTMLAttributes<HTMLInoDialogElement>;

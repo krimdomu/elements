@@ -143,9 +143,11 @@ export declare interface InoChip extends Components.InoChip {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['colorScheme', 'disabled', 'fill', 'label', 'removable', 'selectable', 'selected', 'value'],
-  outputs: ['removeChip']
+  outputs: ['chipClicked', 'removeChip']
 })
 export class InoChip {
+  /**  */
+  chipClicked!: IChip['chipClicked'];
   /** Event that emits as soon as the user removes this chip.
 
 Listen to this event to hide or destroy this chip.
@@ -155,32 +157,7 @@ The event only emits if the property `removable` is true. */
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['removeChip']);
-  }
-}
-
-import { ChipSet as IChipSet } from '@inovex.de/elements/dist/types/components/ino-chip-set/ino-chip-set';
-export declare interface InoChipSet extends Components.InoChipSet {}
-@ProxyCmp({
-  inputs: ['type']
-})
-@Component({
-  selector: 'ino-chip-set',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['type'],
-  outputs: ['updateChipSet']
-})
-export class InoChipSet {
-  /** Event that emits when the value of this element changes.
-
-Only applicable if `inoType` is `choice` or `filter`. */
-  updateChipSet!: IChipSet['updateChipSet'];
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['updateChipSet']);
+    proxyOutputs(this, this.el, ['chipClicked', 'removeChip']);
   }
 }
 
