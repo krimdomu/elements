@@ -668,7 +668,7 @@
     {
       "name": "ino-chip",
       "path": "./src/components/ino-chip/ino-chip.tsx",
-      "description": "The ino-chip component displays the provided content and icon as a chip.\n\n> An ino-chip component must **always** belong to a `ino-chip-set` component.",
+      "description": "The ino-chip component displays the provided content and icon as a chip.",
       "attributes": [
         {
           "name": "color-scheme",
@@ -680,7 +680,7 @@
         {
           "name": "disabled",
           "type": "boolean",
-          "description": "",
+          "description": "Disables all interactions.",
           "defaultValue": "false",
           "required": false
         },
@@ -694,13 +694,13 @@
         {
           "name": "label",
           "type": "string",
-          "description": "The label of this chip (**required**).",
+          "description": "The content of the component.",
           "required": false
         },
         {
           "name": "removable",
           "type": "boolean",
-          "description": "Adds a close icon on the right side of this chip.\n\nIf applied, emits the `removeChip` event on remove click.",
+          "description": "Adds a close icon on the right side of this chip which emits the `removeChip` event on click.",
           "defaultValue": "false",
           "required": false
         },
@@ -714,14 +714,14 @@
         {
           "name": "selected",
           "type": "boolean",
-          "description": "Marks this element as selected.",
+          "description": "Marks this element as selected (**works only in conjunction with `selectable`**)",
           "defaultValue": "false",
           "required": false
         },
         {
           "name": "value",
           "type": "string",
-          "description": "The value of this chip.\n\n**Required** for chips as part of sets of type `filter` or `choice`.",
+          "description": "The value of this chip.\nIs emitted by the `chipClicked` and `chipRemoved` events.",
           "required": false
         }
       ],
@@ -736,7 +736,7 @@
         {
           "name": "disabled",
           "type": "boolean",
-          "description": "",
+          "description": "Disables all interactions.",
           "defaultValue": "false",
           "required": false
         },
@@ -750,13 +750,13 @@
         {
           "name": "label",
           "type": "string",
-          "description": "The label of this chip (**required**).",
+          "description": "The content of the component.",
           "required": false
         },
         {
           "name": "removable",
           "type": "boolean",
-          "description": "Adds a close icon on the right side of this chip.\n\nIf applied, emits the `removeChip` event on remove click.",
+          "description": "Adds a close icon on the right side of this chip which emits the `removeChip` event on click.",
           "defaultValue": "false",
           "required": false
         },
@@ -770,25 +770,25 @@
         {
           "name": "selected",
           "type": "boolean",
-          "description": "Marks this element as selected.",
+          "description": "Marks this element as selected (**works only in conjunction with `selectable`**)",
           "defaultValue": "false",
           "required": false
         },
         {
           "name": "value",
           "type": "string",
-          "description": "The value of this chip.\n\n**Required** for chips as part of sets of type `filter` or `choice`.",
+          "description": "The value of this chip.\nIs emitted by the `chipClicked` and `chipRemoved` events.",
           "required": false
         }
       ],
       "events": [
         {
           "name": "chipClicked",
-          "description": ""
+          "description": "Event that emits the `value` as soon as the user clicks on the chip."
         },
         {
-          "name": "removeChip",
-          "description": "Event that emits as soon as the user removes this chip.\n\nListen to this event to hide or destroy this chip.\nThe event only emits if the property `removable` is true."
+          "name": "chipRemoved",
+          "description": "Event that emits the `value` as soon as the user clicks on the remove icon.\n\nListen to this event to hide or destroy this chip."
         }
       ],
       "methods": [],

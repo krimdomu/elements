@@ -143,21 +143,20 @@ export declare interface InoChip extends Components.InoChip {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['colorScheme', 'disabled', 'fill', 'label', 'removable', 'selectable', 'selected', 'value'],
-  outputs: ['chipClicked', 'removeChip']
+  outputs: ['chipClicked', 'chipRemoved']
 })
 export class InoChip {
-  /**  */
+  /** Event that emits the `value` as soon as the user clicks on the chip. */
   chipClicked!: IChip['chipClicked'];
-  /** Event that emits as soon as the user removes this chip.
+  /** Event that emits the `value` as soon as the user clicks on the remove icon.
 
-Listen to this event to hide or destroy this chip.
-The event only emits if the property `removable` is true. */
-  removeChip!: IChip['removeChip'];
+Listen to this event to hide or destroy this chip. */
+  chipRemoved!: IChip['chipRemoved'];
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['chipClicked', 'removeChip']);
+    proxyOutputs(this, this.el, ['chipClicked', 'chipRemoved']);
   }
 }
 
