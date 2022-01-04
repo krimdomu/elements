@@ -84,7 +84,6 @@
     "@stencil/core": "2.4.0",
     "autosize": "^4.0.2",
     "classnames": "^2.2.6",
-    "currency.js": "^1.2.2",
     "date-fns": "^2.16.1",
     "flatpickr": "^4.4.6",
     "tippy.js": "^6.2.3"

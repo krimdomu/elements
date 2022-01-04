@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonColorScheme, ButtonType, ChipSetType, ChipSurface, ColorScheme, HorizontalLocation, ImageDecodingTypes, Locations, NavDrawerAnchor, NavDrawerVariant, SnackbarType, SpinnerType, SurfaceType, TooltipTrigger, VerticalLocation } from "./components/types";
+import { ButtonColorScheme, ButtonType, ChipSetType, ChipSurface, ColorScheme, HorizontalLocation, ImageDecodingTypes, InputType, Locations, NavDrawerAnchor, NavDrawerVariant, SnackbarType, SpinnerType, SurfaceType, TooltipTrigger, UserInputInterceptor, VerticalLocation } from "./components/types";
 import { PickerTypeKeys } from "./components/ino-datepicker/picker-factory";
 import { Placement } from "tippy.js";
 export namespace Components {
@@ -227,6 +227,16 @@ export namespace Components {
           * The value of this element.
          */
         "value"?: string;
+    }
+    interface InoCurrencyInput {
+        /**
+          * A supported locale for currency number formatting. If not given, it uses the global config. See https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument
+         */
+        "currencyLocale"?: string;
+        /**
+          * Numeric currency value
+         */
+        "value": number | string;
     }
     interface InoDatepicker {
         /**
@@ -539,10 +549,6 @@ export namespace Components {
          */
         "dataList"?: string;
         /**
-          * The number of decimal places. Only works on 'text' type input.
-         */
-        "decimalPlaces"?: number;
-        /**
           * Disables this element.
          */
         "disabled"?: boolean;
@@ -607,13 +613,17 @@ export namespace Components {
          */
         "required"?: boolean;
         /**
-          * Sets blur on the native `input`.  Use this method instead of the global `input.blur()`.
+          * Sets blur on the native `input`. Use this method instead of the global `input.blur()`.
          */
         "setBlur": () => Promise<void>;
         /**
-          * Sets focus on the native `input`.  Use this method instead of the global `input.focus()`.
+          * Sets focus on the native `input`. Use this method instead of the global `input.focus()`.
          */
         "setFocus": () => Promise<void>;
+        /**
+          * Sets an interceptor to manipulate user input before emitting a `valueChange` event.
+         */
+        "setUserInputInterceptor": (fn: UserInputInterceptor) => Promise<void>;
         /**
           * If true, an *optional* message is displayed if not required, otherwise a * marker is displayed if required
          */
@@ -627,13 +637,9 @@ export namespace Components {
          */
         "step"?: number | 'any';
         /**
-          * Shows a dot as a thousands separator. Only works on 'text' type input.
-         */
-        "thousandsSeparator"?: boolean;
-        /**
           * The type of this element (default = text).
          */
-        "type"?: string;
+        "type"?: InputType;
         /**
           * Displays the given unit at the end of the input field.
          */
@@ -1277,6 +1283,12 @@ declare global {
         prototype: HTMLInoControlItemElement;
         new (): HTMLInoControlItemElement;
     };
+    interface HTMLInoCurrencyInputElement extends Components.InoCurrencyInput, HTMLStencilElement {
+    }
+    var HTMLInoCurrencyInputElement: {
+        prototype: HTMLInoCurrencyInputElement;
+        new (): HTMLInoCurrencyInputElement;
+    };
     interface HTMLInoDatepickerElement extends Components.InoDatepicker, HTMLStencilElement {
     }
     var HTMLInoDatepickerElement: {
@@ -1527,6 +1539,7 @@ declare global {
         "ino-chip": HTMLInoChipElement;
         "ino-chip-set": HTMLInoChipSetElement;
         "ino-control-item": HTMLInoControlItemElement;
+        "ino-currency-input": HTMLInoCurrencyInputElement;
         "ino-datepicker": HTMLInoDatepickerElement;
         "ino-dialog": HTMLInoDialogElement;
         "ino-fab": HTMLInoFabElement;
@@ -1808,6 +1821,20 @@ declare namespace LocalJSX {
           * The value of this element.
          */
         "value"?: string;
+    }
+    interface InoCurrencyInput {
+        /**
+          * A supported locale for currency number formatting. If not given, it uses the global config. See https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument
+         */
+        "currencyLocale"?: string;
+        /**
+          * Emits when the user types something in. Contains typed input in `event.detail`
+         */
+        "onValueChange"?: (event: CustomEvent<number>) => void;
+        /**
+          * Numeric currency value
+         */
+        "value"?: number | string;
     }
     interface InoDatepicker {
         /**
@@ -2128,10 +2155,6 @@ declare namespace LocalJSX {
          */
         "dataList"?: string;
         /**
-          * The number of decimal places. Only works on 'text' type input.
-         */
-        "decimalPlaces"?: number;
-        /**
           * Disables this element.
          */
         "disabled"?: boolean;
@@ -2216,13 +2239,9 @@ declare namespace LocalJSX {
          */
         "step"?: number | 'any';
         /**
-          * Shows a dot as a thousands separator. Only works on 'text' type input.
-         */
-        "thousandsSeparator"?: boolean;
-        /**
           * The type of this element (default = text).
          */
-        "type"?: string;
+        "type"?: InputType;
         /**
           * Displays the given unit at the end of the input field.
          */
@@ -2872,6 +2891,7 @@ declare namespace LocalJSX {
         "ino-chip": InoChip;
         "ino-chip-set": InoChipSet;
         "ino-control-item": InoControlItem;
+        "ino-currency-input": InoCurrencyInput;
         "ino-datepicker": InoDatepicker;
         "ino-dialog": InoDialog;
         "ino-fab": InoFab;
@@ -2927,6 +2947,7 @@ declare module "@stencil/core" {
             "ino-chip": LocalJSX.InoChip & JSXBase.HTMLAttributes<HTMLInoChipElement>;
             "ino-chip-set": LocalJSX.InoChipSet & JSXBase.HTMLAttributes<HTMLInoChipSetElement>;
             "ino-control-item": LocalJSX.InoControlItem & JSXBase.HTMLAttributes<HTMLInoControlItemElement>;
+            "ino-currency-input": LocalJSX.InoCurrencyInput & JSXBase.HTMLAttributes<HTMLInoCurrencyInputElement>;
             "ino-datepicker": LocalJSX.InoDatepicker & JSXBase.HTMLAttributes<HTMLInoDatepickerElement>;
             "ino-dialog": LocalJSX.InoDialog & JSXBase.HTMLAttributes<HTMLInoDialogElement>;
             "ino-fab": LocalJSX.InoFab & JSXBase.HTMLAttributes<HTMLInoFabElement>;

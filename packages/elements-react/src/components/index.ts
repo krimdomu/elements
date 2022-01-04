@@ -206,3 +206,7 @@ export const InoTooltip = createReactComponent<
   StencilJSX.IntrinsicElements['ino-tooltip'],
   HTMLInoTooltipElement
 >('ino-tooltip');
+export const InoCurrencyInput = createReactComponent<
+  StencilJSX.IntrinsicElements['ino-currency-input'],
+  HTMLInoCurrencyInputElement
+>('ino-currency-input');
