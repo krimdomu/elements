@@ -39,3 +39,8 @@ export type TooltipTrigger =
   | 'click focus mouseenter';
 
 export type VerticalLocation = 'top' | 'bottom';
+
+/**
+ * An arbitary string (or close by default) referencing the action of a dialog.
+ */
+export type DialogCloseAction = 'close'|string;
