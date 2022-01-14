@@ -58,6 +58,7 @@ export default [
 	'snackbar-checkmark',
 	'snackbar-error',
 	'snackbar-information',
+  'sort',
 	'sort_az',
 	'sort_down',
 	'sort_up',

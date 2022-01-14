@@ -255,7 +255,7 @@ The value can be found in `event.detail`
 @ProxyCmp({
   defineCustomElementFn: undefined,
   inputs: ['autoFocus', 'dateFormat', 'defaultDate', 'defaultHour', 'defaultMinute', 'disabled', 'error', 'helper', 'helperPersistent', 'helperValidation', 'hourStep', 'label', 'max', 'min', 'minuteStep', 'name', 'outline', 'range', 'required', 'showLabelHint', 'twelveHourTime', 'type', 'value'],
-  methods: ['setFocus', 'setBlur']
+  methods: ['redraw', 'setFocus', 'setBlur']
 })
 @Component({
   selector: 'ino-datepicker',

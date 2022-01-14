@@ -8,8 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorScheme, ButtonType, ChipSetType, ChipSurface, ColorScheme, HorizontalLocation, ImageDecodingTypes, Locations, NavDrawerAnchor, NavDrawerVariant, SnackbarType, SpinnerType, SurfaceType, TooltipTrigger, VerticalLocation } from "./components/types";
 import { PickerTypeKeys } from "./components/ino-datepicker/picker-factory";
 import { Placement } from "tippy.js";
-import { SortDirection, SortDirectionChangeDetails } from "./components/ino-table-header-cell/ino-table-header-cell";
-import { SortDirection as SortDirection1, SortDirectionChangeDetails as SortDirectionChangeDetails1 } from "./components/ino-table-header-cell/ino-table-header-cell";
+import { SortDirection, SortDirectionChangeDetails } from "./interface";
 export namespace Components {
     interface InoAutocomplete {
         /**
@@ -303,6 +302,10 @@ export namespace Components {
           * If true, enables the user to choose two dates as an interval. Only works with `type="date"`
          */
         "range"?: boolean;
+        /**
+          * Redraws the datepicker.
+         */
+        "redraw": () => Promise<void>;
         /**
           * Marks this element as required.
          */
